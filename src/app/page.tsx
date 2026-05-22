@@ -6,10 +6,28 @@ import { MapPreviewSection } from "@/components/sections/MapPreviewSection";
 import { PopularItemsSection } from "@/components/sections/PopularItemsSection";
 import { GuidesSection } from "@/components/sections/GuidesSection";
 import { FAQSection } from "@/components/sections/FAQSection";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { generateWebPageSchema, generateBreadcrumbSchema } from "@/lib/schema";
 
 export default function Home() {
+  const pageUrl = "https://subnautica2.live";
+  const pageTitle = "Subnautica 2 Complete Guide & Interactive Map";
+  const pageDesc = "Every item, creature, blueprint, and resource location in Subnautica 2 — all in one place. Updated for Early Access.";
+
   return (
     <>
+      <JsonLd
+        data={generateWebPageSchema({
+          title: pageTitle,
+          description: pageDesc,
+          url: pageUrl,
+        })}
+      />
+      <JsonLd
+        data={generateBreadcrumbSchema([
+          { name: "Home", url: pageUrl },
+        ])}
+      />
       <Header />
       <main className="flex-grow">
         <HeroSection />

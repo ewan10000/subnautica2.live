@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { generateWebPageSchema, generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Subnautica 2 Guide",
@@ -12,8 +14,25 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPolicy() {
+  const pageUrl = "https://subnautica2.live/privacy-policy";
+  const pageTitle = "Privacy Policy | Subnautica 2 Guide";
+  const pageDesc = "Privacy Policy for Subnautica 2 Guide — independent fan site.";
+
   return (
     <>
+      <JsonLd
+        data={generateWebPageSchema({
+          title: pageTitle,
+          description: pageDesc,
+          url: pageUrl,
+        })}
+      />
+      <JsonLd
+        data={generateBreadcrumbSchema([
+          { name: "Home", url: "https://subnautica2.live" },
+          { name: "Privacy Policy", url: pageUrl },
+        ])}
+      />
       <Header />
       <main className="flex-grow">
         <div className="container mx-auto max-w-[800px] px-5 md:px-10 py-12 md:py-16">

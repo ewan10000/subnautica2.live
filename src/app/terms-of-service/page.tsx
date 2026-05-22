@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { generateBreadcrumbSchema, generateWebPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Subnautica 2 Guide",
@@ -12,8 +14,25 @@ export const metadata: Metadata = {
 };
 
 export default function TermsOfService() {
+  const pageUrl = "https://subnautica2.live/terms-of-service";
+  const pageTitle = "Terms of Service | Subnautica 2 Guide";
+  const pageDesc = "Terms of Service for Subnautica 2 Guide — independent fan site.";
+
   return (
     <>
+      <JsonLd
+        data={generateWebPageSchema({
+          title: pageTitle,
+          description: pageDesc,
+          url: pageUrl,
+        })}
+      />
+      <JsonLd
+        data={generateBreadcrumbSchema([
+          { name: "Home", url: "https://subnautica2.live" },
+          { name: "Terms of Service", url: pageUrl },
+        ])}
+      />
       <Header />
       <main className="flex-grow">
         <div className="container mx-auto max-w-[800px] px-5 md:px-10 py-12 md:py-16">

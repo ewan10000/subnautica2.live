@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { generateOrganizationSchema, generateWebSiteSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Subnautica 2 Complete Guide & Interactive Map",
@@ -38,6 +40,8 @@ export default function RootLayout({
       </head>
       <body className="antialiased min-h-screen flex flex-col">
         {children}
+        <JsonLd data={generateOrganizationSchema()} />
+        <JsonLd data={generateWebSiteSchema()} />
       </body>
     </html>
   );
