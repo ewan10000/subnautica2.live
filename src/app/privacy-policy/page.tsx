@@ -21,17 +21,17 @@ export default function PrivacyPolicy() {
   return (
     <>
       <JsonLd
-        data={generateWebPageSchema({
-          title: pageTitle,
-          description: pageDesc,
-          url: pageUrl,
-        })}
-      />
-      <JsonLd
-        data={generateBreadcrumbSchema([
-          { name: "Home", url: "https://subnautica2.live" },
-          { name: "Privacy Policy", url: pageUrl },
-        ])}
+        data={[
+          generateWebPageSchema({
+            title: pageTitle,
+            description: pageDesc,
+            url: pageUrl,
+          }),
+          generateBreadcrumbSchema([
+            { name: "Home", url: "https://subnautica2.live" },
+            { name: "Privacy Policy", url: pageUrl },
+          ]),
+        ]}
       />
       <Header />
       <main className="flex-grow">
@@ -40,7 +40,7 @@ export default function PrivacyPolicy() {
 
           <div className="prose prose-invert max-w-none">
             <p className="text-on-surface-variant mb-6">
-              Last updated: May 19, 2026. This Privacy Policy describes how Subnautica 2 Guide ("we", "our", or "us") collects, uses, and shares your personal information when you visit our website.
+              Last updated: May 19, 2026. This Privacy Policy describes how Subnautica 2 Guide (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) collects, uses, and shares your personal information when you visit our website.
             </p>
 
             <h2 className="text-xl font-semibold text-white mt-8 mb-4">Information We Collect</h2>

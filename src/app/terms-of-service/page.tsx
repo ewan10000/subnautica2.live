@@ -21,17 +21,17 @@ export default function TermsOfService() {
   return (
     <>
       <JsonLd
-        data={generateWebPageSchema({
-          title: pageTitle,
-          description: pageDesc,
-          url: pageUrl,
-        })}
-      />
-      <JsonLd
-        data={generateBreadcrumbSchema([
-          { name: "Home", url: "https://subnautica2.live" },
-          { name: "Terms of Service", url: pageUrl },
-        ])}
+        data={[
+          generateWebPageSchema({
+            title: pageTitle,
+            description: pageDesc,
+            url: pageUrl,
+          }),
+          generateBreadcrumbSchema([
+            { name: "Home", url: "https://subnautica2.live" },
+            { name: "Terms of Service", url: pageUrl },
+          ]),
+        ]}
       />
       <Header />
       <main className="flex-grow">
@@ -45,7 +45,7 @@ export default function TermsOfService() {
 
             <h2 className="text-xl font-semibold text-white mt-8 mb-4">1. Independent Fan Site</h2>
             <p className="text-on-surface-variant mb-6">
-              Subnautica 2 Guide is an independent fan site and is not affiliated with, endorsed by, or sponsored by Unknown Worlds Entertainment or Krafton. "Subnautica" is a trademark of Unknown Worlds Entertainment.
+              Subnautica 2 Guide is an independent fan site and is not affiliated with, endorsed by, or sponsored by Unknown Worlds Entertainment or Krafton. &quot;Subnautica&quot; is a trademark of Unknown Worlds Entertainment.
             </p>
 
             <h2 className="text-xl font-semibold text-white mt-8 mb-4">2. Use of Content</h2>
@@ -60,7 +60,7 @@ export default function TermsOfService() {
 
             <h2 className="text-xl font-semibold text-white mt-8 mb-4">4. Disclaimer</h2>
             <p className="text-on-surface-variant mb-6">
-              This site is provided "as is" without warranties of any kind. We are not responsible for any loss of game progress, saves, or accounts resulting from the use of information on this site.
+              This site is provided &quot;as is&quot; without warranties of any kind. We are not responsible for any loss of game progress, saves, or accounts resulting from the use of information on this site.
             </p>
 
             <h2 className="text-xl font-semibold text-white mt-8 mb-4">5. Changes to Terms</h2>
