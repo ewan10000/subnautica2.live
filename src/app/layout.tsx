@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Subnautica 2 Complete Guide & Interactive Map",
   description: "Every item, creature, blueprint, and resource location in Subnautica 2 — all in one place. Updated for Early Access.",
   keywords: ["Subnautica 2", "guide", "map", "items", "blueprints", "resources", "creatures", "Early Access"],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Subnautica 2 Complete Guide & Interactive Map",
     description: "Every item, creature, blueprint, and resource location in Subnautica 2 — all in one place.",

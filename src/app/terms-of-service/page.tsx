@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Terms of Service | Subnautica 2 Guide",
   description: "Terms of Service for Subnautica 2 Guide — independent fan site.",
   robots: { index: false, follow: true },
+  alternates: {
+    canonical: "/terms-of-service",
+  },
 };
 
 export default function TermsOfService() {

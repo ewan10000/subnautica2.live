@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Subnautica 2 Guide",
   description: "Privacy Policy for Subnautica 2 Guide — independent fan site.",
   robots: { index: false, follow: true },
+  alternates: {
+    canonical: "/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicy() {
