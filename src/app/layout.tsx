@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Subnautica 2 Complete Guide & Interactive Map",
   description: "Every item, creature, blueprint, and resource location in Subnautica 2 — all in one place. Updated for Early Access.",
   keywords: ["Subnautica 2", "guide", "map", "items", "blueprints", "resources", "creatures", "Early Access"],
+  metadataBase: new URL("https://subnautica2.live"),
   alternates: {
     canonical: "/",
   },
@@ -14,12 +15,14 @@ export const metadata: Metadata = {
     title: "Subnautica 2 Complete Guide & Interactive Map",
     description: "Every item, creature, blueprint, and resource location in Subnautica 2 — all in one place.",
     type: "website",
-    url: "https://subnautica2.live",
+    url: "/",
+    images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Subnautica 2 Complete Guide & Interactive Map",
     description: "Every item, creature, blueprint, and resource location in Subnautica 2.",
+    images: ["/og-image.jpg"],
   },
   verification: {
     google: "pending",
