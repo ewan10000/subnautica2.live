@@ -99,3 +99,37 @@ export function generateFAQPageSchema(questions: FAQQuestion[]) {
     })),
   };
 }
+
+interface HowToStep {
+  name: string;
+  text: string;
+  url?: string;
+}
+
+interface HowToParams {
+  name: string;
+  description: string;
+  totalTime?: string;
+  step: HowToStep[];
+}
+
+export function generateHowToSchema({ name, description, totalTime, step }: HowToParams) {
+  const schema: Record<string, unknown> = {
+    "@type": "HowTo",
+    name,
+    description,
+    step: step.map((s, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: s.name,
+      text: s.text,
+      ...(s.url ? { url: s.url } : {}),
+    })),
+  };
+
+  if (totalTime) {
+    schema.totalTime = totalTime;
+  }
+
+  return schema;
+}
